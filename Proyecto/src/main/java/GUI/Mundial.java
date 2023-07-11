@@ -4,17 +4,50 @@
  */
 package GUI;
 
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Cristopher Matus
  */
 public class Mundial extends javax.swing.JFrame {
+    DefaultTableModel modelo = new DefaultTableModel();
+    
+    public void cargarDatos (){
+        ArrayList <Object>confe = new ArrayList<Object>();
+        confe.add( "Pos");
+        confe.add( "Selección");
+        confe.add( "Pts");
+        confe.add( "PJ");
+        confe.add( "PG");
+        confe.add( "PE");
+        confe.add( "PP");
+        confe.add( "GF");
+        confe.add( "GC");
+        confe.add( "Dif");
+        
+        for (Object columna : confe){
+        modelo.addColumn(columna);
+        }
+        
+        this.tblCAF.setModel(modelo);
+        this.tblConcacaf.setModel(modelo);
+        this.tblCONMEBOL.setModel(modelo);
+        this.tblUEFA.setModel(modelo);
+        this.tblOFC.setModel(modelo);
+        this.tblClasificados.setModel(modelo);
+        
+        ArrayList<Object[]>datos = new ArrayList<Object[]>();
+        
+    }
 
     /**
      * Creates new form Mundial
      */
     public Mundial() {
         initComponents();
+        cargarDatos();
     }
 
     /**
@@ -31,23 +64,23 @@ public class Mundial extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblCAF = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tblConcacaf = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        tblCONMEBOL = new javax.swing.JTable();
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
+        tblUEFA = new javax.swing.JTable();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        tblOFC = new javax.swing.JTable();
         jTabbedPane5 = new javax.swing.JTabbedPane();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTable6 = new javax.swing.JTable();
+        tblClasificados = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,27 +102,18 @@ public class Mundial extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
 
-        jTable1.setBackground(new java.awt.Color(102, 102, 102));
-        jTable1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jTable1.setForeground(new java.awt.Color(255, 255, 255));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblCAF.setBackground(new java.awt.Color(102, 102, 102));
+        tblCAF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        tblCAF.setForeground(new java.awt.Color(255, 255, 255));
+        tblCAF.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1.Maruecos", null, null, null, null, null, null, null, null, null},
-                {"2.Nigeria", null, null, null, null, null, null, null, null, null},
-                {"3.Túnez", null, null, null, null, null, null, null, null, null},
-                {"4.Sudáfrica", null, null, null, null, null, null, null, null, null},
-                {"5.Costa de Marfil", null, null, null, null, null, null, null, null, null},
-                {"6.Camerún", null, null, null, null, null, null, null, null, null},
-                {"7.Argelia", null, null, null, null, null, null, null, null, null},
-                {"8.Egipto", null, null, null, null, null, null, null, null, null},
-                {"9.Ghana", null, null, null, null, null, null, null, null, null},
-                {"10.Senegal (repechaje)", null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "Pos", "Seleccion", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblCAF);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -110,18 +134,10 @@ public class Mundial extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
 
-        jTable2.setBackground(new java.awt.Color(255, 255, 153));
-        jTable2.setBorder(new javax.swing.border.MatteBorder(null));
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tblConcacaf.setBackground(new java.awt.Color(255, 255, 153));
+        tblConcacaf.setBorder(new javax.swing.border.MatteBorder(null));
+        tblConcacaf.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"11.Trinidad y Tobago", null, null, null, null, null, null, null, null, null},
-                {"12.Panada", null, null, null, null, null, null, null, null, null},
-                {"13.Jamaica", null, null, null, null, null, null, null, null, null},
-                {"14.Costa Rica", null, null, null, null, null, null, null, null, null},
-                {"15.El Salvador", null, null, null, null, null, null, null, null, null},
-                {"16.Honduras", null, null, null, null, null, null, null, null, null},
-                {"17.Haití ", null, null, null, null, null, null, null, null, null},
-                {"18.Republica Dominicana (repechaje)", null, null, null, null, null, null, null, null, null},
                 {"", null, null, null, null, null, null, null, null, null},
                 {"", null, null, null, null, null, null, null, null, null}
             },
@@ -129,7 +145,7 @@ public class Mundial extends javax.swing.JFrame {
                 "Pos", "Seleccion", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(tblConcacaf);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -148,33 +164,26 @@ public class Mundial extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Concacaf", jPanel3);
 
-        jTable3.setBackground(new java.awt.Color(0, 102, 153));
-        jTable3.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        jTable3.setForeground(new java.awt.Color(255, 255, 153));
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        tblCONMEBOL.setBackground(new java.awt.Color(0, 102, 153));
+        tblCONMEBOL.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        tblCONMEBOL.setForeground(new java.awt.Color(255, 255, 153));
+        tblCONMEBOL.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"19.Argentina", null, null, null, null, null, null, null, null, null},
-                {"20.Brasil", null, null, null, null, null, null, null, null, null},
-                {"21.Colombia", null, null, null, null, null, null, null, null, null},
-                {"22.Chile", null, null, null, null, null, null, null, null, null},
-                {"23.Paraguay", null, null, null, null, null, null, null, null, null},
-                {"24.Bolivia", null, null, null, null, null, null, null, null, null},
-                {"25.Perú(repechaje)", null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "Pos", "Selección", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "Title 10"
             }
         ));
-        jScrollPane3.setViewportView(jTable3);
+        jScrollPane3.setViewportView(tblCONMEBOL);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 686, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 71, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,34 +198,18 @@ public class Mundial extends javax.swing.JFrame {
         jTabbedPane3.setBackground(new java.awt.Color(0, 0, 0));
         jTabbedPane3.setForeground(new java.awt.Color(0, 204, 204));
 
-        jTable5.setBackground(new java.awt.Color(51, 51, 51));
-        jTable5.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        jTable5.setForeground(new java.awt.Color(255, 255, 255));
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+        tblUEFA.setBackground(new java.awt.Color(51, 51, 51));
+        tblUEFA.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        tblUEFA.setForeground(new java.awt.Color(255, 255, 255));
+        tblUEFA.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"26.España", null, null, null, null, null, null, null, null, null},
-                {"27.Italia", null, null, null, null, null, null, null, null, null},
-                {"28.Francia", null, null, null, null, null, null, null, null, null},
-                {"29.Bélgica", null, null, null, null, null, null, null, null, null},
-                {"30.Inglaterraa", null, null, null, null, null, null, null, null, null},
-                {"31.Alemania", null, null, null, null, null, null, null, null, null},
-                {"32.Países Bajos", null, null, null, null, null, null, null, null, null},
-                {"33.Croacia ", null, null, null, null, null, null, null, null, null},
-                {"34.Grecia", null, null, null, null, null, null, null, null, null},
-                {"35.Suecia", null, null, null, null, null, null, null, null, null},
-                {"36.Suiza", null, null, null, null, null, null, null, null, null},
-                {"37.Dinamarca", null, null, null, null, null, null, null, null, null},
-                {"38.Ucrania", null, null, null, null, null, null, null, null, null},
-                {"39.Reino Unido", null, null, null, null, null, null, null, null, null},
-                {"40.Austria", null, null, null, null, null, null, null, null, null},
-                {"41.Polonia", null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
                 "Pos", "Selección", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "Title 10"
             }
         ));
-        jScrollPane5.setViewportView(jTable5);
+        jScrollPane5.setViewportView(tblUEFA);
 
         jTabbedPane3.addTab("Europa", jScrollPane5);
 
@@ -226,16 +219,11 @@ public class Mundial extends javax.swing.JFrame {
         jTabbedPane2.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         jTabbedPane2.setForeground(new java.awt.Color(102, 255, 102));
 
-        jTable4.setBackground(new java.awt.Color(204, 102, 0));
-        jTable4.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        jTable4.setForeground(new java.awt.Color(51, 204, 255));
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        tblOFC.setBackground(new java.awt.Color(204, 102, 0));
+        tblOFC.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        tblOFC.setForeground(new java.awt.Color(51, 204, 255));
+        tblOFC.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"42.Nueva Zelanda", null, null, null, null, null, null, null, null, null},
-                {"43.Papúa Nueva Guinea (repechaje)", null, null, null, null, null, null, null, null, null},
-                {"", null, null, null, null, null, null, null, null, null},
-                {"", null, null, null, null, null, null, null, null, null},
-                {"", null, null, null, null, null, null, null, null, null},
                 {"", null, null, null, null, null, null, null, null, null},
                 {"", null, null, null, null, null, null, null, null, null},
                 {"", null, null, null, null, null, null, null, null, null},
@@ -246,19 +234,16 @@ public class Mundial extends javax.swing.JFrame {
                 "Pos", "Selección", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "Title 10"
             }
         ));
-        jScrollPane4.setViewportView(jTable4);
+        jScrollPane4.setViewportView(tblOFC);
 
         jTabbedPane2.addTab("Oceanía", jScrollPane4);
 
         jTabbedPane1.addTab("OFC", jTabbedPane2);
 
-        jTable6.setBackground(new java.awt.Color(0, 102, 102));
-        jTable6.setForeground(new java.awt.Color(204, 204, 204));
-        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+        tblClasificados.setBackground(new java.awt.Color(0, 102, 102));
+        tblClasificados.setForeground(new java.awt.Color(204, 204, 204));
+        tblClasificados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"44.México", null, null, null, null, null, null, null, null, null},
-                {"45.Canadá", null, null, null, null, null, null, null, null, null},
-                {"46.Estados Unidos", null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null},
@@ -268,10 +253,10 @@ public class Mundial extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Pos", "Selección", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "Title 10"
+                "Pos", "Selección", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif"
             }
         ));
-        jScrollPane6.setViewportView(jTable6);
+        jScrollPane6.setViewportView(tblClasificados);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -307,37 +292,7 @@ public class Mundial extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Mundial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Mundial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Mundial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Mundial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Mundial().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
@@ -356,11 +311,11 @@ public class Mundial extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JTabbedPane jTabbedPane5;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
-    private javax.swing.JTable jTable5;
-    private javax.swing.JTable jTable6;
+    private javax.swing.JTable tblCAF;
+    private javax.swing.JTable tblCONMEBOL;
+    private javax.swing.JTable tblClasificados;
+    private javax.swing.JTable tblConcacaf;
+    private javax.swing.JTable tblOFC;
+    private javax.swing.JTable tblUEFA;
     // End of variables declaration//GEN-END:variables
 }

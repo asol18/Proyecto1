@@ -4,6 +4,8 @@
 
 package Logica;
 
+import GUI.Mundial;
+
 /**
  *
  * @author JRS
@@ -11,6 +13,7 @@ package Logica;
 public class Proyecto {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+      Mundial mundial = new Mundial();
+      mundial.setVisible(true);
     }
 }
