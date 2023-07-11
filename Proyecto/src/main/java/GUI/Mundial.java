@@ -26,65 +26,269 @@ public class Mundial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPane4 = new javax.swing.JTabbedPane();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        jTabbedPane3 = new javax.swing.JTabbedPane();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        jTabbedPane5 = new javax.swing.JTabbedPane();
+        jPanel5 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTable6 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jTabbedPane1.setBackground(new java.awt.Color(153, 153, 255));
+        jTabbedPane1.setForeground(new java.awt.Color(51, 51, 51));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 673, Short.MAX_VALUE)
+            .addGap(0, 757, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 427, Short.MAX_VALUE)
+            .addGap(0, 777, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("tab1", jPanel1);
+        jTabbedPane1.addTab("", jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
+
+        jTable1.setBackground(new java.awt.Color(102, 102, 102));
+        jTable1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jTable1.setForeground(new java.awt.Color(255, 255, 255));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"1.Maruecos", null, null, null, null, null, null, null, null, null},
+                {"2.Nigeria", null, null, null, null, null, null, null, null, null},
+                {"3.Túnez", null, null, null, null, null, null, null, null, null},
+                {"4.Sudáfrica", null, null, null, null, null, null, null, null, null},
+                {"5.Costa de Marfil", null, null, null, null, null, null, null, null, null},
+                {"6.Camerún", null, null, null, null, null, null, null, null, null},
+                {"7.Argelia", null, null, null, null, null, null, null, null, null},
+                {"8.Egipto", null, null, null, null, null, null, null, null, null},
+                {"9.Ghana", null, null, null, null, null, null, null, null, null},
+                {"10.Senegal (repechaje)", null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Pos", "Seleccion", "PTS", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 673, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 427, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 657, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 120, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("tab2", jPanel2);
+        jTabbedPane1.addTab("CAF", jPanel2);
+
+        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+
+        jTable2.setBackground(new java.awt.Color(255, 255, 153));
+        jTable2.setBorder(new javax.swing.border.MatteBorder(null));
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"11.Trinidad y Tobago", null, null, null, null, null, null, null, null, null},
+                {"12.Panada", null, null, null, null, null, null, null, null, null},
+                {"13.Jamaica", null, null, null, null, null, null, null, null, null},
+                {"14.Costa Rica", null, null, null, null, null, null, null, null, null},
+                {"15.El Salvador", null, null, null, null, null, null, null, null, null},
+                {"16.Honduras", null, null, null, null, null, null, null, null, null},
+                {"17.Haití ", null, null, null, null, null, null, null, null, null},
+                {"18.Republica Dominicana (repechaje)", null, null, null, null, null, null, null, null, null},
+                {"", null, null, null, null, null, null, null, null, null},
+                {"", null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Pos", "Seleccion", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 673, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 751, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 427, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 549, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("tab3", jPanel3);
+        jTabbedPane1.addTab("Concacaf", jPanel3);
+
+        jTable3.setBackground(new java.awt.Color(0, 102, 153));
+        jTable3.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jTable3.setForeground(new java.awt.Color(255, 255, 153));
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"19.Argentina", null, null, null, null, null, null, null, null, null},
+                {"20.Brasil", null, null, null, null, null, null, null, null, null},
+                {"21.Colombia", null, null, null, null, null, null, null, null, null},
+                {"22.Chile", null, null, null, null, null, null, null, null, null},
+                {"23.Paraguay", null, null, null, null, null, null, null, null, null},
+                {"24.Bolivia", null, null, null, null, null, null, null, null, null},
+                {"25.Perú(repechaje)", null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Pos", "Selección", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "Title 10"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable3);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 673, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 686, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 427, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(251, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("tab4", jPanel4);
+        jTabbedPane1.addTab("CONMEBOL", jPanel4);
+
+        jTabbedPane3.setBackground(new java.awt.Color(0, 0, 0));
+        jTabbedPane3.setForeground(new java.awt.Color(0, 204, 204));
+
+        jTable5.setBackground(new java.awt.Color(51, 51, 51));
+        jTable5.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jTable5.setForeground(new java.awt.Color(255, 255, 255));
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"26.España", null, null, null, null, null, null, null, null, null},
+                {"27.Italia", null, null, null, null, null, null, null, null, null},
+                {"28.Francia", null, null, null, null, null, null, null, null, null},
+                {"29.Bélgica", null, null, null, null, null, null, null, null, null},
+                {"30.Inglaterraa", null, null, null, null, null, null, null, null, null},
+                {"31.Alemania", null, null, null, null, null, null, null, null, null},
+                {"32.Países Bajos", null, null, null, null, null, null, null, null, null},
+                {"33.Croacia ", null, null, null, null, null, null, null, null, null},
+                {"34.Grecia", null, null, null, null, null, null, null, null, null},
+                {"35.Suecia", null, null, null, null, null, null, null, null, null},
+                {"36.Suiza", null, null, null, null, null, null, null, null, null},
+                {"37.Dinamarca", null, null, null, null, null, null, null, null, null},
+                {"38.Ucrania", null, null, null, null, null, null, null, null, null},
+                {"39.Reino Unido", null, null, null, null, null, null, null, null, null},
+                {"40.Austria", null, null, null, null, null, null, null, null, null},
+                {"41.Polonia", null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Pos", "Selección", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "Title 10"
+            }
+        ));
+        jScrollPane5.setViewportView(jTable5);
+
+        jTabbedPane3.addTab("Europa", jScrollPane5);
+
+        jTabbedPane1.addTab("UEFA", jTabbedPane3);
+
+        jTabbedPane2.setBackground(new java.awt.Color(51, 51, 51));
+        jTabbedPane2.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        jTabbedPane2.setForeground(new java.awt.Color(102, 255, 102));
+
+        jTable4.setBackground(new java.awt.Color(204, 102, 0));
+        jTable4.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jTable4.setForeground(new java.awt.Color(51, 204, 255));
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"42.Nueva Zelanda", null, null, null, null, null, null, null, null, null},
+                {"43.Papúa Nueva Guinea (repechaje)", null, null, null, null, null, null, null, null, null},
+                {"", null, null, null, null, null, null, null, null, null},
+                {"", null, null, null, null, null, null, null, null, null},
+                {"", null, null, null, null, null, null, null, null, null},
+                {"", null, null, null, null, null, null, null, null, null},
+                {"", null, null, null, null, null, null, null, null, null},
+                {"", null, null, null, null, null, null, null, null, null},
+                {"", null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Pos", "Selección", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "Title 10"
+            }
+        ));
+        jScrollPane4.setViewportView(jTable4);
+
+        jTabbedPane2.addTab("Oceanía", jScrollPane4);
+
+        jTabbedPane1.addTab("OFC", jTabbedPane2);
+
+        jTable6.setBackground(new java.awt.Color(0, 102, 102));
+        jTable6.setForeground(new java.awt.Color(204, 204, 204));
+        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"44.México", null, null, null, null, null, null, null, null, null},
+                {"45.Canadá", null, null, null, null, null, null, null, null, null},
+                {"46.Estados Unidos", null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Pos", "Selección", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "Title 10"
+            }
+        ));
+        jScrollPane6.setViewportView(jTable6);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 319, Short.MAX_VALUE))
+        );
+
+        jTabbedPane5.addTab("Clasificados", jPanel5);
+
+        jTabbedPane1.addTab("Clasificados", jTabbedPane5);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -140,6 +344,23 @@ public class Mundial extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTabbedPane jTabbedPane3;
+    private javax.swing.JTabbedPane jTabbedPane4;
+    private javax.swing.JTabbedPane jTabbedPane5;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
+    private javax.swing.JTable jTable5;
+    private javax.swing.JTable jTable6;
     // End of variables declaration//GEN-END:variables
 }
