@@ -12,31 +12,43 @@ import javax.swing.table.DefaultTableModel;
  * @author Cristopher Matus
  */
 public class Mundial extends javax.swing.JFrame {
+
     //crea tabla y añade informacion a las columnas, de cada tbl para cada confederacion
     DefaultTableModel modelo = new DefaultTableModel();
-    
-    public void cargarDatos (){
+
+    public void cargarDatos() {
         modelo.addColumn("Pos");
-        modelo.addColumn( "Selección");
-        modelo.addColumn( "Pts");
-        modelo.addColumn( "PJ");
-        modelo.addColumn( "PG");
-        modelo.addColumn( "PE");
-        modelo.addColumn( "PP");
-        modelo.addColumn( "GF");
-        modelo.addColumn( "GC");
-        modelo.addColumn( "Dif");
-        
-        
+        modelo.addColumn("Selección");
+        modelo.addColumn("Pts");
+        modelo.addColumn("PJ");
+        modelo.addColumn("PG");
+        modelo.addColumn("PE");
+        modelo.addColumn("PP");
+        modelo.addColumn("GF");
+        modelo.addColumn("GC");
+        modelo.addColumn("Dif");
+
         this.tblCAF.setModel(modelo);
         this.tblConcacaf.setModel(modelo);
         this.tblCONMEBOL.setModel(modelo);
         this.tblUEFA.setModel(modelo);
         this.tblOFC.setModel(modelo);
         this.tblClasificados.setModel(modelo);
-        
-        
-        
+
+        Object[] datosCAF = {"1", "Selección 1", "0", "0", "0", "0", "0", "0", "0", "0"};
+        Object[] datosConcacaf = {"1", "Selección 2", "0", "0", "0", "0", "0", "0", "0", "0"};
+        Object[] datosCONMEBOL = {"1", "Selección 3", "0", "0", "0", "0", "0", "0", "0", "0"};
+        Object[] datosUEFA = {"1", "Selección 4", "0", "0", "0", "0", "0", "0", "0", "0"};
+        Object[] datosOFC = {"1", "Selección 5", "0", "0", "0", "0", "0", "0", "0", "0"};
+        Object[] datosClasificados = {"1", "Selección 6", "0", "0", "0", "0", "0", "0", "0", "0"};
+
+        modelo.addRow(datosCAF);
+        modelo.addRow(datosConcacaf);
+        modelo.addRow(datosCONMEBOL);
+        modelo.addRow(datosUEFA);
+        modelo.addRow(datosOFC);
+        modelo.addRow(datosClasificados);
+
     }
 
     /**
@@ -289,7 +301,6 @@ public class Mundial extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
