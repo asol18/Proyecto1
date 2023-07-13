@@ -13,41 +13,31 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Mundial extends javax.swing.JFrame {
 
-    //crea tabla y añade informacion a las columnas, de cada tbl para cada confederacion
-    DefaultTableModel modelo = new DefaultTableModel();
+    
 
     public void cargarDatos() {
-        modelo.addColumn("Pos");
-        modelo.addColumn("Selección");
-        modelo.addColumn("Pts");
-        modelo.addColumn("PJ");
-        modelo.addColumn("PG");
-        modelo.addColumn("PE");
-        modelo.addColumn("PP");
-        modelo.addColumn("GF");
-        modelo.addColumn("GC");
-        modelo.addColumn("Dif");
-
+        //creo el modelo
+        DefaultTableModel modelo = new DefaultTableModel(new Object[]
+        {"Pos", "Selección", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif"}, 0);
+        //uso ese mismo modelo para las tablas que se van a usar
         this.tblCAF.setModel(modelo);
         this.tblConcacaf.setModel(modelo);
         this.tblCONMEBOL.setModel(modelo);
         this.tblUEFA.setModel(modelo);
         this.tblOFC.setModel(modelo);
         this.tblClasificados.setModel(modelo);
-
-        Object[] datosCAF = {"1", "Selección 1", "0", "0", "0", "0", "0", "0", "0", "0"};
-        Object[] datosConcacaf = {"1", "Selección 2", "0", "0", "0", "0", "0", "0", "0", "0"};
-        Object[] datosCONMEBOL = {"1", "Selección 3", "0", "0", "0", "0", "0", "0", "0", "0"};
-        Object[] datosUEFA = {"1", "Selección 4", "0", "0", "0", "0", "0", "0", "0", "0"};
-        Object[] datosOFC = {"1", "Selección 5", "0", "0", "0", "0", "0", "0", "0", "0"};
-        Object[] datosClasificados = {"1", "Selección 6", "0", "0", "0", "0", "0", "0", "0", "0"};
-
-        modelo.addRow(datosCAF);
-        modelo.addRow(datosConcacaf);
-        modelo.addRow(datosCONMEBOL);
-        modelo.addRow(datosUEFA);
-        modelo.addRow(datosOFC);
-        modelo.addRow(datosClasificados);
+        //creo un objeto para poner lo de los puntos en 0
+        Object[] datos = {"", "", 0, 0, 0, 0, 0, 0, 0, 0};
+        //este es complicado entonces van notas
+        //modelo es la instancia
+        //DataVector es un metodo que pone los datos usando un vector de vectores y uno de objetos
+        modelo.setDataVector
+        //este establece los datos que guardamos en el objeto "datos"(vector de vectores tiene los datos)        
+        (new Object[][]{datos, datos, datos, datos, datos, datos},
+                //y este tiene el nombre de las columnas de la tabla en la que vamos a
+                // meter los datos(vector de objetos tiene las columnas)
+                new Object[]
+        {"Pos", "Selección", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif"});
 
     }
 
