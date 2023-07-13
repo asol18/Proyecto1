@@ -12,24 +12,21 @@ import javax.swing.table.DefaultTableModel;
  * @author Cristopher Matus
  */
 public class Mundial extends javax.swing.JFrame {
+    //crea tabla y añade informacion a las columnas, de cada tbl para cada confederacion
     DefaultTableModel modelo = new DefaultTableModel();
     
     public void cargarDatos (){
-        ArrayList <Object>confe = new ArrayList<Object>();
-        confe.add( "Pos");
-        confe.add( "Selección");
-        confe.add( "Pts");
-        confe.add( "PJ");
-        confe.add( "PG");
-        confe.add( "PE");
-        confe.add( "PP");
-        confe.add( "GF");
-        confe.add( "GC");
-        confe.add( "Dif");
+        modelo.addColumn("Pos");
+        modelo.addColumn( "Selección");
+        modelo.addColumn( "Pts");
+        modelo.addColumn( "PJ");
+        modelo.addColumn( "PG");
+        modelo.addColumn( "PE");
+        modelo.addColumn( "PP");
+        modelo.addColumn( "GF");
+        modelo.addColumn( "GC");
+        modelo.addColumn( "Dif");
         
-        for (Object columna : confe){
-        modelo.addColumn(columna);
-        }
         
         this.tblCAF.setModel(modelo);
         this.tblConcacaf.setModel(modelo);
@@ -38,7 +35,7 @@ public class Mundial extends javax.swing.JFrame {
         this.tblOFC.setModel(modelo);
         this.tblClasificados.setModel(modelo);
         
-        ArrayList<Object[]>datos = new ArrayList<Object[]>();
+        
         
     }
 
