@@ -12,7 +12,7 @@ import java.util.Random;
  */
 public class CAF {
     private Object [][] tablaPartido;
-   
+    
    public void jugarPartido (Object[][] tblCAF){
      Random random = new Random();
      int equipo1 = random.nextInt(tblCAF.length);
