@@ -306,30 +306,25 @@ public class Mundial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 //explicar aqui y no todo
     public void cargarDatos() {
+         Pais pais = new Pais();
         //creo el modelo
-        DefaultTableModel modelo = new DefaultTableModel(new Object[]
-        {"Pos", "Selección", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif"}, 0);
-        //uso ese mismo modelo para las tablas que se van a usar
-        this.tblCAF.setModel(modelo);
-        this.tblConcacaf.setModel(modelo);
-        this.tblCONMEBOL.setModel(modelo);
-        this.tblUEFA.setModel(modelo);
-        this.tblOFC.setModel(modelo);
-        this.tblClasificados.setModel(modelo);
-        //creo un objeto para poner lo de los puntos en 0
-        Object[] datos = 
-        //este es complicado entonces van notas
-        //modelo es la instancia
-        //DataVector es un metodo que pone los datos usando un vector de vectores y uno de objetos
-        modelo.setDataVector
-        //este establece los datos que guardamos en el objeto "datos"(vector de vectores tiene los datos)        
-        (new Object[][]{datos, datos, datos, datos, datos, datos},
-                //y este tiene el nombre de las columnas de la tabla en la que vamos a
-                // meter los datos(vector de objetos tiene las columnas)
-                new Object[]
+        DefaultTableModel modeloConcacaf = new DefaultTableModel();
+               this.tblConcacaf.setModel(modeloConcacaf);   
+        modeloConcacaf.setDataVector  
+        (pais.cargarPaisConcacaf(), new Object[]
         {"Pos", "Selección", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif"});
-
+        
+        DefaultTableModel modeloCAF = new DefaultTableModel();
+               this.tblCAF.setModel(modeloCAF);   
+        modeloCAF.setDataVector  
+        (pais.cargarPaisCAF(), new Object[]
+        {"Pos", "Selección", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif"});
     }
+    
+    //this.tblCONMEBOL.setModel(modelo);
+      //  this.tblUEFA.setModel(modelo);
+        //this.tblOFC.setModel(modelo);
+        //this.tblClasificados.setModel(modelo);
    public void ingresarDatos() {
     
 }
