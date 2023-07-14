@@ -16,4 +16,5 @@ public class Proyecto {
       Mundial mundial = new Mundial();
       mundial.setVisible(true);
     }
+    
 }

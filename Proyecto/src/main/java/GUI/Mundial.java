@@ -5,41 +5,18 @@
 package GUI;
 
 import java.util.ArrayList;
+import javax.swing.JFrame;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-
+import Logica.*;
 /**
  *
  * @author Cristopher Matus
  */
 public class Mundial extends javax.swing.JFrame {
-
+ 
     
 
-    public void cargarDatos() {
-        //creo el modelo
-        DefaultTableModel modelo = new DefaultTableModel(new Object[]
-        {"Pos", "Selección", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif"}, 0);
-        //uso ese mismo modelo para las tablas que se van a usar
-        this.tblCAF.setModel(modelo);
-        this.tblConcacaf.setModel(modelo);
-        this.tblCONMEBOL.setModel(modelo);
-        this.tblUEFA.setModel(modelo);
-        this.tblOFC.setModel(modelo);
-        this.tblClasificados.setModel(modelo);
-        //creo un objeto para poner lo de los puntos en 0
-        Object[] datos = {"", "", 0, 0, 0, 0, 0, 0, 0, 0};
-        //este es complicado entonces van notas
-        //modelo es la instancia
-        //DataVector es un metodo que pone los datos usando un vector de vectores y uno de objetos
-        modelo.setDataVector
-        //este establece los datos que guardamos en el objeto "datos"(vector de vectores tiene los datos)        
-        (new Object[][]{datos, datos, datos, datos, datos, datos},
-                //y este tiene el nombre de las columnas de la tabla en la que vamos a
-                // meter los datos(vector de objetos tiene las columnas)
-                new Object[]
-        {"Pos", "Selección", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif"});
-
-    }
 
     /**
      * Creates new form Mundial
@@ -47,6 +24,10 @@ public class Mundial extends javax.swing.JFrame {
     public Mundial() {
         initComponents();
         cargarDatos();
+        ingresarDatos();
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     /**
@@ -59,11 +40,15 @@ public class Mundial extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane4 = new javax.swing.JTabbedPane();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        tbpCAF = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCAF = new javax.swing.JTable();
+        btnSimularCAF = new javax.swing.JButton();
+        btnSimularTodoCAF = new javax.swing.JButton();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        txtSimuladosCAF = new javax.swing.JTextArea();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblConcacaf = new javax.swing.JTable();
@@ -83,8 +68,8 @@ public class Mundial extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTabbedPane1.setBackground(new java.awt.Color(153, 153, 255));
-        jTabbedPane1.setForeground(new java.awt.Color(51, 51, 51));
+        tbpCAF.setBackground(new java.awt.Color(153, 153, 255));
+        tbpCAF.setForeground(new java.awt.Color(51, 51, 51));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -97,7 +82,7 @@ public class Mundial extends javax.swing.JFrame {
             .addGap(0, 777, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("", jPanel1);
+        tbpCAF.addTab("", jPanel1);
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -114,6 +99,19 @@ public class Mundial extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblCAF);
 
+        btnSimularCAF.setText("Simular");
+        btnSimularCAF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSimularCAFActionPerformed(evt);
+            }
+        });
+
+        btnSimularTodoCAF.setText("Simular Todo");
+
+        txtSimuladosCAF.setColumns(20);
+        txtSimuladosCAF.setRows(5);
+        jScrollPane7.setViewportView(txtSimuladosCAF);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -121,15 +119,32 @@ public class Mundial extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnSimularTodoCAF, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSimularCAF, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(71, 71, 71)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 657, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 120, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(btnSimularCAF)
+                        .addGap(46, 46, 46)
+                        .addComponent(btnSimularTodoCAF))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 57, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("CAF", jPanel2);
+        tbpCAF.addTab("CAF", jPanel2);
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -157,11 +172,11 @@ public class Mundial extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 549, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 432, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Concacaf", jPanel3);
+        tbpCAF.addTab("Concacaf", jPanel3);
 
         tblCONMEBOL.setBackground(new java.awt.Color(0, 102, 153));
         tblCONMEBOL.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
@@ -192,7 +207,7 @@ public class Mundial extends javax.swing.JFrame {
                 .addContainerGap(251, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("CONMEBOL", jPanel4);
+        tbpCAF.addTab("CONMEBOL", jPanel4);
 
         jTabbedPane3.setBackground(new java.awt.Color(0, 0, 0));
         jTabbedPane3.setForeground(new java.awt.Color(0, 204, 204));
@@ -212,7 +227,7 @@ public class Mundial extends javax.swing.JFrame {
 
         jTabbedPane3.addTab("Europa", jScrollPane5);
 
-        jTabbedPane1.addTab("UEFA", jTabbedPane3);
+        tbpCAF.addTab("UEFA", jTabbedPane3);
 
         jTabbedPane2.setBackground(new java.awt.Color(51, 51, 51));
         jTabbedPane2.setBorder(javax.swing.BorderFactory.createCompoundBorder());
@@ -237,7 +252,7 @@ public class Mundial extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Oceanía", jScrollPane4);
 
-        jTabbedPane1.addTab("OFC", jTabbedPane2);
+        tbpCAF.addTab("OFC", jTabbedPane2);
 
         tblClasificados.setBackground(new java.awt.Color(0, 102, 102));
         tblClasificados.setForeground(new java.awt.Color(204, 204, 204));
@@ -261,7 +276,9 @@ public class Mundial extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 664, Short.MAX_VALUE)
+                .addGap(93, 93, 93))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,27 +289,62 @@ public class Mundial extends javax.swing.JFrame {
 
         jTabbedPane5.addTab("Clasificados", jPanel5);
 
-        jTabbedPane1.addTab("Clasificados", jTabbedPane5);
+        tbpCAF.addTab("Clasificados", jTabbedPane5);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(tbpCAF)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(tbpCAF)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+//explicar aqui y no todo
+    public void cargarDatos() {
+        //creo el modelo
+        DefaultTableModel modelo = new DefaultTableModel(new Object[]
+        {"Pos", "Selección", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif"}, 0);
+        //uso ese mismo modelo para las tablas que se van a usar
+        this.tblCAF.setModel(modelo);
+        this.tblConcacaf.setModel(modelo);
+        this.tblCONMEBOL.setModel(modelo);
+        this.tblUEFA.setModel(modelo);
+        this.tblOFC.setModel(modelo);
+        this.tblClasificados.setModel(modelo);
+        //creo un objeto para poner lo de los puntos en 0
+        Object[] datos = 
+        //este es complicado entonces van notas
+        //modelo es la instancia
+        //DataVector es un metodo que pone los datos usando un vector de vectores y uno de objetos
+        modelo.setDataVector
+        //este establece los datos que guardamos en el objeto "datos"(vector de vectores tiene los datos)        
+        (new Object[][]{datos, datos, datos, datos, datos, datos},
+                //y este tiene el nombre de las columnas de la tabla en la que vamos a
+                // meter los datos(vector de objetos tiene las columnas)
+                new Object[]
+        {"Pos", "Selección", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif"});
+
+    }
+   public void ingresarDatos() {
+    
+}
+    
+    private void btnSimularCAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularCAFActionPerformed
+      
+    }//GEN-LAST:event_btnSimularCAFActionPerformed
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnSimularCAF;
+    private javax.swing.JButton btnSimularTodoCAF;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -304,7 +356,7 @@ public class Mundial extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTabbedPane jTabbedPane4;
@@ -315,5 +367,7 @@ public class Mundial extends javax.swing.JFrame {
     private javax.swing.JTable tblConcacaf;
     private javax.swing.JTable tblOFC;
     private javax.swing.JTable tblUEFA;
+    private javax.swing.JTabbedPane tbpCAF;
+    private javax.swing.JTextArea txtSimuladosCAF;
     // End of variables declaration//GEN-END:variables
 }
