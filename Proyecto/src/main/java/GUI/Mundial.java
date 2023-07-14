@@ -9,14 +9,12 @@ import javax.swing.JFrame;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import Logica.*;
+
 /**
  *
  * @author Cristopher Matus
  */
 public class Mundial extends javax.swing.JFrame {
- 
-    
-
 
     /**
      * Creates new form Mundial
@@ -305,32 +303,49 @@ public class Mundial extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 //explicar aqui y no todo
+
     public void cargarDatos() {
-         Pais pais = new Pais();
-        //creo el modelo
+        Pais pais = new Pais();
+        //creo el modelo para cada tabla y jala los datos de la clase pais
         DefaultTableModel modeloConcacaf = new DefaultTableModel();
-               this.tblConcacaf.setModel(modeloConcacaf);   
-        modeloConcacaf.setDataVector  
-        (pais.cargarPaisConcacaf(), new Object[]
-        {"Pos", "Selección", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif"});
-        
+        this.tblConcacaf.setModel(modeloConcacaf);
+        modeloConcacaf.setDataVector(pais.cargarPaisConcacaf(), new Object[]{"Pos", "Selección", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif"});
+        //creo el modelo para cada tabla y jala los datos de la clase pais
         DefaultTableModel modeloCAF = new DefaultTableModel();
-               this.tblCAF.setModel(modeloCAF);   
-        modeloCAF.setDataVector  
-        (pais.cargarPaisCAF(), new Object[]
-        {"Pos", "Selección", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif"});
+        this.tblCAF.setModel(modeloCAF);
+        modeloCAF.setDataVector(pais.cargarPaisCAF(), new Object[]{"Pos", "Selección", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif"});
+        //creo el modelo para cada tabla y jala los datos de la clase pais
+        DefaultTableModel modeloCONMEBOL = new DefaultTableModel();
+        this.tblCONMEBOL.setModel(modeloCONMEBOL);
+        modeloCONMEBOL.setDataVector(pais.cargarPaisCONMEBOL(), new Object[]{"Pos", "Selección", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif"});
+        //creo el modelo para cada tabla y jala los datos de la clase pais
+        DefaultTableModel modeloUEFA = new DefaultTableModel();
+        this.tblUEFA.setModel(modeloUEFA);
+        modeloUEFA.setDataVector(pais.cargarPaisUEFA(), new Object[]{"Pos", "Selección", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif"});
+        //creo el modelo para cada tabla y jala los datos de la clase pais
+        DefaultTableModel modeloOFC = new DefaultTableModel();
+        this.tblOFC.setModel(modeloOFC);
+        modeloOFC.setDataVector(pais.cargarPaisOFC(), new Object[]{"Pos", "Selección", "Pts", "PJ", "PG", "PE", "PP", "GF", "GC", "Dif"});
     }
-    
-    //this.tblCONMEBOL.setModel(modelo);
-      //  this.tblUEFA.setModel(modelo);
-        //this.tblOFC.setModel(modelo);
-        //this.tblClasificados.setModel(modelo);
-   public void ingresarDatos() {
-    
-}
-    
+
+    //this.tblClasificados.setModel(modelo);
+    public void ingresarDatos() {
+
+    }
+
     private void btnSimularCAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularCAFActionPerformed
-      
+        // Obtener el número de filas y columnas del modelo de datos
+        int filas = tblCAF.getRowCount();
+        int columnas = tblCAF.getColumnCount();
+        Object[][] contador= new Object[filas][columnas];
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                contador[i][j] = tblCAF.getValueAt(i, j);
+            }
+        }
+        CAF caf = new CAF();
+        caf.jugarPartido(contador);
+
     }//GEN-LAST:event_btnSimularCAFActionPerformed
 
     /**
