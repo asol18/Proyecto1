@@ -27,6 +27,8 @@ public class Pais {
     }
 
     public Object[][] cargarPaisCAF() {
+        Selecion sele = new Selecion(0,"Camerun",0, 0, 0, 0, 0, 0, 0, 0);
+
         Object[][] caf = {
             this.cargarPais(0, "Camerun", 0, 0, 0, 0, 0, 0, 0, 0),
             this.cargarPais(0, "Nigeria", 0, 0, 0, 0, 0, 0, 0, 0),
@@ -34,7 +36,7 @@ public class Pais {
             this.cargarPais(0, "Tunez", 0, 0, 0, 0, 0, 0, 0, 0),
             this.cargarPais(0, "Argelia", 0, 0, 0, 0, 0, 0, 0, 0),
             this.cargarPais(0, "Ghana", 0, 0, 0, 0, 0, 0, 0, 0),
-            this.cargarPais(0, "Sudafria", 0, 0, 0, 0, 0, 0, 0, 0),
+            this.cargarPais(0, "Sudafrica", 0, 0, 0, 0, 0, 0, 0, 0),
             this.cargarPais(0, "Costa de Marfil", 0, 0, 0, 0, 0, 0, 0, 0),
             this.cargarPais(0, "Egipto", 0, 0, 0, 0, 0, 0, 0, 0),
             this.cargarPais(0, "Senegal", 0, 0, 0, 0, 0, 0, 0, 0),};

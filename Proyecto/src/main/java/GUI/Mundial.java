@@ -5,6 +5,7 @@
 package GUI;
 
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -26,6 +27,25 @@ public class Mundial extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
+    }
+
+    private CAF CAF;
+
+    /**
+     * @return the CAF
+     */
+    public CAF getCAF() {
+        if (this.CAF == null) {
+            this.CAF = new CAF();
+        }
+        return CAF;
+    }
+
+    /**
+     * @param CAF the CAF to set
+     */
+    public void setCAF(CAF CAF) {
+        this.CAF = CAF;
     }
 
     /**
@@ -499,16 +519,30 @@ public class Mundial extends javax.swing.JFrame {
     private void btnSimularCAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularCAFActionPerformed
         // Obtener el número de filas y columnas del modelo de datos
         int filas = tblCAF.getRowCount();
-        int columnas = tblCAF.getColumnCount();
-        Object[][] contador= new Object[filas][columnas];
+        ArrayList<Selecion> seleciones = new ArrayList<>();
         for (int i = 0; i < filas; i++) {
-            for (int j = 0; j < columnas; j++) {
-                contador[i][j] = tblCAF.getValueAt(i, j);
-            }
+            Selecion sele = new Selecion(
+                    (int) tblCAF.getValueAt(i, 0),
+                    (String) tblCAF.getValueAt(i, 1),
+                    (int) tblCAF.getValueAt(i, 2),
+                    (int) tblCAF.getValueAt(i, 3),
+                    (int) tblCAF.getValueAt(i, 4),
+                    (int) tblCAF.getValueAt(i, 5),
+                    (int) tblCAF.getValueAt(i, 6),
+                    (int) tblCAF.getValueAt(i, 7),
+                    (int) tblCAF.getValueAt(i, 8),
+                    (int)tblCAF.getValueAt(i, 9)
+            );
+            seleciones.add(sele);
         }
-        
-    
+        this.getCAF().jugarPartido(seleciones);
+        Resultados res = this.getCAF().getTablaPartido().get(this.getCAF().getTablaPartido().size() - 1);
+        this.txtSimuladosCAF.setText(this.Imprimir(res));
     }//GEN-LAST:event_btnSimularCAFActionPerformed
+
+    private String Imprimir(Resultados res) {
+        return "El resultado del juego entre " + res.getSelecion1() + " vs " + res.getSelecion2() + " es de " + res.getPos() + " - " + res.getPuntos();
+    }
 
     private void btnSimularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimularActionPerformed
         // TODO add your handling code here:
@@ -564,4 +598,5 @@ public class Mundial extends javax.swing.JFrame {
     private javax.swing.JTextArea txtSimuladosOFC;
     private javax.swing.JTextArea txtSimuladosUEFA;
     // End of variables declaration//GEN-END:variables
+
 }
